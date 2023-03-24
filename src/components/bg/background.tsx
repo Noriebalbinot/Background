@@ -3,7 +3,7 @@ import "./background.css";
 
 export function AnimatedBackground() {
 	useEffect(() => {
-		const setbounds = (e) => {
+		const setbounds = (e: MouseEvent) => {
 			document.body.style.setProperty("--x", e.clientX + "px");
 			document.body.style.setProperty("--y", e.clientY + "px");
 		};
