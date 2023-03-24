@@ -1,0 +1,57 @@
+.AnimatedBackground {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: #333333ca;
+	inset: 0;
+}
+
+.AnimatedBackground::before,
+.AnimatedBackground::after {
+	width: 50%;
+	background-image: linear-gradient(30deg, #125531 50%, #112598 100%);
+	scale: 1 0.5;
+	height: 100%;
+	position: absolute;
+	content: "";
+	border-radius: 50%;
+	filter: blur(100px);
+	opacity: 0.8;
+	transform: rotateZ(45deg);
+}
+
+.AnimatedBackground::after {
+	right: 0;
+	animation: aft 60s infinite linear;
+}
+.AnimatedBackground::before {
+	left: 0;
+	animation: bf 60s infinite linear;
+}
+
+@keyframes aft {
+	0%,
+	100% {
+		right: 0;
+		scale: 1 1;
+		transform: rotateZ(45deg);
+	}
+	50% {
+		right: -20%;
+		scale: 0.1 0.5;
+		transform: rotateZ(180deg);
+	}
+}
+@keyframes bf {
+	0%,
+	100% {
+		left: 0;
+		transform: rotateZ(45deg);
+		scale: 1 1;
+	}
+	50% {
+		left: -20%;
+		transform: rotateZ(180deg);
+		scale: 0.1 0.5;
+	}
+}
