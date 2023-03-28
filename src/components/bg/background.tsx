@@ -5,22 +5,22 @@ export function AnimatedBackground() {
 	const [time, settime] = useState("");
 	const numberformat = (n: number) => (n < 10 ? "0" + n : "" + n);
 	const colorst = [
-		"crimson",
-		"steelblue",
-		"#333",
-		"#957D95",
-		"#904c77",
-		"#011638",
+		"#9dacff",
+		"#9dacff",
+		"#9dacff",
+		"#9dacff",
+		"#9dacff",
+		"#9dacff",
 		"#9dacff",
 	];
 	const colors2 = [
-		"crimson",
 		"steelblue",
-		"#333",
-		"#957D95",
-		"#904c77",
-		"#011638",
-		"#9dacff",
+		"steelblue",
+		"steelblue",
+		"steelblue",
+		"steelblue",
+		"steelblue",
+		"steelblue",
 	];
 	useEffect(() => {
 		const time2 = setInterval(() => {
