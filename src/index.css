@@ -4,16 +4,6 @@
 }
 
 body {
-	@property --color1 {
-		syntax: "<color>";
-		inherits: false;
-		initial-value: steelblue;
-	}
-	@property --color2 {
-		syntax: "<color>";
-		inherits: false;
-		initial-value: crimson;
-	}
 }
 .App {
 	width: 100dvw;

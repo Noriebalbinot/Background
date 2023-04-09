@@ -1,7 +1,17 @@
 import { useEffect, useState } from "react";
 import "./background.css";
 
+class Rotater {
+	constructor(public x: number, public y: number) {}
+	nextframe() {
+		this.x += 1;
+		this.y += 1;
+		console.log(this.x, this.y);
+	}
+}
+
 export function AnimatedBackground() {
+	new Rotater(1, 2).nextframe();
 	const [time, settime] = useState("");
 	const numberformat = (n: number) => (n < 10 ? "0" + n : "" + n);
 	const colorst = [
@@ -23,16 +33,16 @@ export function AnimatedBackground() {
 		"#9dacff",
 	];
 	useEffect(() => {
-		const time2 = setInterval(() => {
-			document.body.style.setProperty(
-				"--color1",
-				colorst[Math.floor(Math.random() * 6) + 1]
-			);
-			document.body.style.setProperty(
-				"--color2",
-				colors2[Math.floor(Math.random() * 6) + 1]
-			);
-		}, 10000);
+		// const time2 = setInterval(() => {
+		// 	document.body.style.setProperty(
+		// 		"--color1",
+		// 		colorst[Math.floor(Math.random() * 6) + 1]
+		// 	);
+		// 	document.body.style.setProperty(
+		// 		"--color2",
+		// 		colors2[Math.floor(Math.random() * 6) + 1]
+		// 	);
+		// }, 10000);
 		const settimeout = setInterval(() => {
 			const date = new Date();
 			settime(
@@ -44,7 +54,6 @@ export function AnimatedBackground() {
 			);
 		}, 1000);
 		return () => {
-			clearTimeout(time2);
 			clearTimeout(settimeout);
 		};
 	}, []);

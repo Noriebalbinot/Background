@@ -1,3 +1,14 @@
+@property --color1 {
+	syntax: "<color>";
+	inherits: false;
+	initial-value: steelblue;
+}
+@property --color2 {
+	syntax: "<color>";
+	inherits: false;
+	initial-value: crimson;
+}
+
 .AnimatedBackground {
 	position: absolute;
 	width: 100%;
@@ -11,52 +22,39 @@
 	display: grid;
 	place-content: center;
 	z-index: 1;
-	transition: background 5s ease;
-	animation: bg 10s infinite linear;
+	transition: all 5s ease;
+	animation: aft 10s infinite linear;
 	text-shadow: 1px 10px 100px #fff;
+	transition: --color1 100ms cubic-bezier(0.39, 0.575, 0.565, 1),
+		--color2 100ms 1000ms cubic-bezier(0.39, 0.575, 0.565, 1);
 }
 
-.AnimatedBackground::after {
-	width: 50%;
-	background-image: linear-gradient(
-		30deg,
-		var(--color2) 0%,
-		var(--color1) 100%
-	);
-	height: 50%;
-	scale: 1 1.5;
-	position: absolute;
-	content: "";
-	border-radius: 50%;
-	filter: blur(50px);
-	opacity: 0.8;
-}
-
-.AnimatedBackground::after {
-	left: -25%;
-	top: -25%;
-	transition: all 800ms cubic-bezier(0.39, 0.575, 0.565, 1);
-	animation: aft 60s infinite linear;
-}
 @keyframes aft {
+	/* crimson */
+	/* steelblue */
+	/* #333 */
+	/*  */
+	/* #904c77 */
+	/* #011638 */
+	/* #9dacff */
 	0% {
-		left: -25%;
-		top: -25%;
+		--color2: #333;
+		--color1: steelblue;
 	}
 	25% {
-		left: 75%;
-		top: -25%;
+		--color2: steelblue;
+		--color1: #957d95;
 	}
 	50% {
-		left: 75%;
-		top: 75%;
+		--color2: #957d95;
+		--color1: #011638;
 	}
 	75% {
-		left: -25%;
-		top: 75%;
+		--color2: #011638;
+		--color1: #333;
 	}
 	100% {
-		left: -25%;
-		top: -25%;
+		--color2: #333;
+		--color1: steelblue;
 	}
 }
