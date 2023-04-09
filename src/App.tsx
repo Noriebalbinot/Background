@@ -1,10 +1,8 @@
-import { AnimatedBackground } from "./components/bg/background";
-import { Header } from "./components/header/header";
+import { AnimatedBackground } from "./components/background";
 
 function App() {
 	return (
 		<div className="App">
-			<Header />
 			<AnimatedBackground />
 		</div>
 	);

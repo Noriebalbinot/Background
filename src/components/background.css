@@ -6,7 +6,7 @@
 @property --color2 {
 	syntax: "<color>";
 	inherits: false;
-	initial-value: crimson;
+	initial-value: #333;
 }
 
 .AnimatedBackground {
@@ -30,13 +30,6 @@
 }
 
 @keyframes aft {
-	/* crimson */
-	/* steelblue */
-	/* #333 */
-	/*  */
-	/* #904c77 */
-	/* #011638 */
-	/* #9dacff */
 	0% {
 		--color2: #333;
 		--color1: steelblue;
